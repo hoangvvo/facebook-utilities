@@ -1,0 +1,93 @@
+body {
+    background: #f2f2f2;
+    font-size: 14px;
+}
+nav {
+    height: 56px;
+}
+#message {
+    background: #fff;
+    border: 0.7px;
+    height: calc(100vh - 56px);
+    overflow:hidden;
+    overflow-y:auto;
+}
+.msg-group .msg-text span, .msg-group .msg-file span {
+    padding: 6px 12px;
+    word-wrap: break-word;
+}
+.msg-group .msg-file span a {
+    color: #fff;
+}
+.msg-group .msg-file span a::before {
+    content: "\21E9"
+}
+
+.msg-group .msg-text span, .msg-group .msg-file span, .msg-group .msg-image img, .msg-group .msg-animatedImage img, .msg-group .msg-video video{
+margin: 1px 0;
+display: inline-block;
+}
+.msg-group .msg-image img, .msg-group .msg-animatedImage img {
+    max-width: 100%;
+    height: auto;      
+}
+
+/*sizing*/
+.msg-group .msg-animatedImage img, .msg-group .msg-text span {
+    max-width: 320px;
+}
+
+.msg-group .msg-image img, .msg-group .msg-video video {
+    max-width: 462px;
+    border-radius: 1.3em;
+    height: auto;
+}
+.msg-group .msg-sticker img {
+    max-width: 120px;
+}
+/*other side*/
+.msg-group.group-other .msg-item {
+    text-align: left;
+}
+.msg-group.group-other .msg-item span {
+    background-color: #f1f0f0;
+    border-radius: 4px 1.3em 1.3em 4px;
+    color: #000;
+}
+.msg-group.group-other .msg-item:first-of-type span {
+    border-top-left-radius: 1.3em;
+}
+.msg-group.group-other .msg-item:last-of-type span {
+    border-bottom-left-radius: 1.3em;
+}
+.msg-group.group-other .msg-video video {
+    left: 0;
+}
+/*me side*/
+.msg-group.group-self .msg-item {
+    text-align: right;
+}
+.msg-group.group-self .msg-item span {
+    background-color: #0084ff;
+    border-radius: 1.3em 4px 4px 1.3em;
+    color: #fff;
+}
+.msg-group.group-self .msg-item:first-of-type span {
+    border-top-right-radius: 1.3em;
+}
+.msg-group.group-self .msg-item:last-of-type span {
+    border-bottom-right-radius: 1.3em;
+}
+.msg-group.group-self .msg-video video {
+    right: 0;
+}
+/* both */
+.msg-group .msg-generic {
+    text-align: center!important;
+    line-height: 14px;
+    font-size: 11px;
+}
+.msg-group .msg-generic span {
+    color: #90949c!important;
+    background-color: transparent!important;
+}

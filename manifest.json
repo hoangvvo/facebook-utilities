@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "name": "Utilities for Facebook by Hoang Vo",
+    "author": "Hoang Vo",
+    "version": "0.0.5.1",
+    "description": "Improve your experience on Facebook with an all-in-one solution. Facebook Utilities for Facebook provides security, privacy and a wide range of functionalities: Friend Interaction Analysis, Who unfriend me, Block 'seen' and 'typing',...",
+    "permissions": [
+        "tabs",
+        "cookies",
+        "storage",
+        "https://*.facebook.com/*",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "unlimitedStorage"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "icons": {
+        "32": "icon/32.png",
+        "48": "icon/48.png",
+        "96": "icon/96.png"
+    },
+    "browser_action": {
+        "default_icon": "icon/48.png",
+        "default_title": "Facebook Utilities",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["js/browser-polyfill.min.js","js/_background.js"]
+    },
+    "content_scripts": [
+		{
+			"matches": [
+				"https://www.facebook.com/*"
+			],
+			"js": [
+                "js/browser-polyfill.min.js",
+				"js/_fbtimer.js"
+			],
+			"run_at": "document_idle",
+			"all_frames": false
+		}
+    ],
+    "web_accessible_resources": [
+        "page/facebookblocked.html"
+    ]
+}

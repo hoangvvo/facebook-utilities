@@ -22,6 +22,12 @@ The application extracts your Facebook access token **(!?)** and helps you accom
 
 I understand that access token must be dealt with care. That's the reason I have implemented security measures to prevent it from being leaked. Your access token is saved in the application memory while it is running. After you close your browser, I remove it from memory. This ensures the security for your facebook account.
 
+## Contributing
+
+You are welcomed to make improvements and add features to this project.
+
+Please see my [contributing.md](CONTRIBUTING.md).
+
 ## License
 
 [AGPL-3.0](LICENSE)

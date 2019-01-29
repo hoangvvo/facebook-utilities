@@ -200,7 +200,7 @@ async function do_getuser() {
     uid = pr.value;
     if (!stillok) return false;
     //get access token
-    r = await fetch(`https://www.facebook.com/${uid}`, {
+    r = await fetch(`https://www.facebook.com/ajax/settings/security/devices.php?__a=1`, {
         credentials: "include"
     }).then(handleErrors);
     if (!stillok) return false;

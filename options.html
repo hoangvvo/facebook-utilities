@@ -31,6 +31,9 @@
                                                         <a class="nav-link active" href="#general" data-toggle="tab">General</a>
                                                     </li>
                                                     <li class="nav-item">
+                                                        <a class="nav-link" href="#login" data-toggle="tab">Login</a>
+                                                    </li>
+                                                    <li class="nav-item">
                                                         <a class="nav-link" href="#privacy" data-toggle="tab">Privacy</a>
                                                     </li>
                                                     <li class="nav-item">
@@ -61,6 +64,29 @@
                                                 <p>Please keep in mind that turn off this option does not destroy the obtained access token. To disable API and destroy the access token, use the button below.</p>
                                                 <button class="btn btn-rose btn-link btn-reset">Delete all add-ons data</button>
                                                 <button class="btn btn-rose btn-link btn-destroytoken">Disable API and destroy access token</button>
+                                            </div>
+                                            <div class="tab-pane" id="login">
+                                                <p>Select your method to log in</p>
+                                                <div class="form-check form-check-radio">
+                                                    <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" id="opt_login_auto" name="loginMethod">
+                                                        Login automatically
+                                                        <span class="circle">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-radio form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" id="opt_login_at" name="loginMethod">
+                                                        Login with access token
+                                                        <span class="circle">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                    <input id="opt_login_at_token" type="text" class="form-control">
+                                                </div>
+                                                <p><a href="attoolkit.html#atgetlogin">Get access token</a></p>
                                             </div>
                                             <div class="tab-pane" id="privacy">
                                                 <div class="form-check">

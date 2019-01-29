@@ -10,6 +10,11 @@
         <!-- CSS Files -->
         <link href="css/material-dashboard.min.css?v=2.1.0" rel="stylesheet" />
         <link href="css/common.css" rel="stylesheet" />
+        <style>
+        .at-loginat {
+            word-wrap: break-word;
+        }
+        </style>
     </head>
     <body>
         <div id="sidebar" class="sidebar" data-color="rose" data-background-color="black">
@@ -54,7 +59,17 @@
                                 <div class="card-body ">
                                     <div class="info-horizontal">
                                         <div class="icon icon-rose">
-                                            <i class="material-icons">exit_to_app</i>
+                                            <i class="material-icons">vpn_key</i>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="info-title">Login with Password</h4>
+                                            <p>This will generate an access token using your login credential.</p>
+                                            <a href="#" id="atgetlogin">Login</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-horizontal">
+                                        <div class="icon icon-rose">
+                                            <i class="material-icons">block</i>
                                         </div>
                                         <div class="description">
                                             <h4 class="info-title">ADVANCED: Access token invalidator</h4>

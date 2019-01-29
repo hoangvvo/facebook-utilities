@@ -102,6 +102,26 @@ $("#atdeactivate").click(function(){
       })
       
 })
-$("#noexpireatexplain").click(function(){
-    swal("What is never expire access token?",'<p class="text-left">Access tokens are strings that can be used to access your account. This is also the one that I use to authenticate your account. <br/><br/>However, other malicious extensions and scripts can take advantages of this one to steal your account. <br/><br/>Deactivate it immediately if you notice unusual behaviors (Unauthorized posting, messaging, ..). <br/><br/> And remember, <span class="text-danger">NEVER SHARE THIS ONE WITH OTHERS</span>. Recommended: <a href="https://www.facebook.com/selfxss">Self-XSS</a>, <a href="https://www.facebook.com/help/524275404355719">Access Token theft</a>.</p>')
+$("#atgetlogin").click(function(){
+    swal({
+        title: 'Login with Facebook',
+        html:
+        'Email: <input id="at-login" class="swal2-input">' +
+        'Password: <input type="password" id="at-psw" class="swal2-input">',
+        showCancelButton: false,
+        confirmButtonText: 'Login with Facebook',
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+            return browser.runtime.sendMessage({
+                do: "getloginwithpass",login: $('#at-login').val(), psw: $('#at-psw').val()
+            })
+        }
+      }).then((r) => {
+        if (!r.error) {
+            swal("Login successfully!",`<p>You may use to token below to <a href="options.html">login</a> this application.</p><code class="at-loginat">${r.response.at}</code>`)
+        } else {
+            swal("An error has occurred", `Error: ${r.errorText}`, "error");
+            loadingsth(0);
+        }
+      })
 })

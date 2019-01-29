@@ -8,6 +8,7 @@ let searchParams = new URLSearchParams(window.location.search)
         //set default options
         browser.storage.local.set({
             opt_collect_usagedata: true,
+            opt_login_auto: true
         })
         break;
         case "update":

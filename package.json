@@ -4,7 +4,7 @@
   "description": "Improve your experience on Facebook with an all-in-one solution. Facebook Utilities for Facebook provides security, privacy and a wide range of functionalities: Friend Interaction Analysis, Who unfriend me, Block 'seen' and 'typing',...",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/vvhoang/facebook-utilities#readme",
   "dependencies": {
-    "html-minifier": "^3.5.21",
-    "uglify-es": "^3.3.9"
+    "@node-minify/clean-css": "^4.0.5",
+    "@node-minify/core": "^4.0.5",
+    "@node-minify/html-minifier": "^4.0.5",
+    "@node-minify/uglify-es": "^4.0.5",
+    "fs-extra": "^7.0.1"
   }
 }

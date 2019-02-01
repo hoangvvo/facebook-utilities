@@ -1,0 +1,23 @@
+{
+  "name": "facebook-utilities",
+  "version": "0.5.1",
+  "description": "Improve your experience on Facebook with an all-in-one solution. Facebook Utilities for Facebook provides security, privacy and a wide range of functionalities: Friend Interaction Analysis, Who unfriend me, Block 'seen' and 'typing',...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvhoang/facebook-utilities.git"
+  },
+  "author": "Hoang Vo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvhoang/facebook-utilities/issues"
+  },
+  "homepage": "https://github.com/vvhoang/facebook-utilities#readme",
+  "dependencies": {
+    "html-minifier": "^3.5.21",
+    "uglify-es": "^3.3.9"
+  }
+}

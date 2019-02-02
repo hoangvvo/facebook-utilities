@@ -1,3 +1,14 @@
+/*
+"friendsTracking_{uid}_friendList": array,
+"friendsTracking_{uid}_lastcheck": year/month/day,
+"friendsTracking_{uid}_log": [
+    {
+        date: year/month/day,
+        change: boolean,
+        result: result
+    },
+]
+*/
 $("#sidebar-friendstracking").addClass("active");
 $("#sidebar-tools").addClass("show");
 $("#pagename").text("Who unfriend me");

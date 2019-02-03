@@ -124,6 +124,18 @@ async function do_getuser() {
     let accountType = 0;
     let accountUntil = '';
     let stillok = true;
+    //check if user enabled api
+    apienable = await browser.storage.local.get("opt_api").then(r => {
+        if (r.opt_api != true) {
+            stillok = 0;
+            sendResponse({
+            error: true,
+            APIdisable: true,
+            errorText: 'Please enabled API option to use this feature.'
+            });
+        }
+    })
+    if (!stillok) return false;
     pr = await browser.cookies.get({
         name: "c_user",
         url: "https://www.facebook.com"

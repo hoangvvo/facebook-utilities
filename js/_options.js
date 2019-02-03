@@ -1,11 +1,10 @@
 $("#pagename").text("Options");
 $("#sidebar-options").addClass("active");
-
 function init() {
 
 }
 $('#tab-options').find('.form-check-input').prop('checked', false);
-options = ["opt_myapi","opt_collect_usagedata","opt_block_seen", "opt_block_typing_chat", "opt_block_typing_comment", "opt_fb_timer", "opt_fb_timer_blocker"];
+options = ["opt_api","opt_collect_usagedata","opt_block_seen", "opt_block_typing_chat", "opt_block_typing_comment", "opt_fb_timer", "opt_fb_timer_blocker"];
 browser.storage.local.get(options).then(r => {
     for (e in r) {
         $(`#${e}`).prop('checked', r[e]);

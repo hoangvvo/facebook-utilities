@@ -9,8 +9,12 @@ $("#getat").click(function(){
         do: "showat"
     }).then(async r => {
         if (!r.error) {
-            $("#at").text(r.response.at)
-            $("#getat").attr("disabled", "true")
+            if (r.response.at != '') {
+            $("#at").text(r.response.at);
+            $("#getat").attr("disabled", "true");
+            } else {
+                swal("Cannot get access token.", `Did you enable Use API options? <a href="options.html">Enable it</a>`, "error");
+            }
             loadingsth(0);
             init();
         } else {

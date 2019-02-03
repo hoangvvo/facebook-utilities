@@ -2,6 +2,8 @@
 _uid = ""; //uid
 _name = ""; //name
 _dtsg = ""; //dtsg
+//features that not require API
+noAPIfeatures = ['/options.html',"/attoolkit.html"]
 //notification
 _notificationCount = 0;
 //google analytics
@@ -89,6 +91,13 @@ browser.runtime.sendMessage({
             }, 5000);
         }
     } else {
-        swal("An error has occurred", `Error: ${r.errorText}`, "error");
+        if (r.APIdisable && (!noAPIfeatures.includes(location.pathname))) {
+            $('.content').html('<p class="text-center">API need to be enabled to use this feature. You can enable it <a href="options.html">here</a>.</p>')
+            loadingsth(0);
+        }
+        else if (!noAPIfeatures.includes(location.pathname)) {
+            swal("An error has occurred", `Error: ${r.errorText}`, "error");
+            loadingsth(0);
+        } else loadingsth(0);
     }
 })

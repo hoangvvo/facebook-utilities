@@ -1,3 +1,4 @@
+var at = "";
 $("#pagename").text("Options");
 $("#sidebar-options").addClass("active");
 function init() {
@@ -57,6 +58,61 @@ $('.btn-reset').click(function(){
                 }
             );
             
+        }
+    })
+})
+$('.btn-destroytoken').click(function(){
+    swal({
+        title: 'Are you sure?',
+        text: `Disabling API will cause several features to stop working.`,
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Disable and destroy token!'
+    }).then((result) => {
+        if (result) {
+            loadingsth(1);
+            browser.runtime.sendMessage({
+                do: "showat"
+            }).then(async r => {
+                if (!r.error) {
+                    if (r.response.at != '') {
+                    at = r.response.at;
+                    return fetch(`https://api.facebook.com/restserver.php?method=auth.expireSession&format=json&access_token=${at}`)
+                    .then(response => {
+                      if (!response.ok) {
+                        throw new Error(response.statusText)
+                      }
+                      return response.json();
+                    }).then((result) => {
+                        if (result.error_msg) {
+                            swal({
+                                title: `The token was not properly destroyed!`,
+                                text: result.error_msg,
+                                type: 'error'
+                            })
+                            loadingsth(0);
+                        } else {
+                            swal({tiele: 'Done!', text: `The token has been invalidated and API has been disabled. The access token was: <br/><code>${at}</code><br/>You can check it using the <a target="_blank" href="attoolkit.html">Access Token Toolkit</a>.`, type: 'success'});
+                            $('#opt_api').attr("checked","false");
+                            browser.storage.local.set({
+                                opt_api: false
+                            });
+                            loadingsth(0);
+                        }
+                      })
+
+                    } else {
+                        swal("Cannot get access token.", `No access token was obtained.`, "error");
+                    }
+                    loadingsth(0);
+                    init();
+                } else {
+                    swal("An error has occurred", `Error: ${r.errorText}`, "error");
+                    loadingsth(0);
+                }
+            })
         }
     })
 })

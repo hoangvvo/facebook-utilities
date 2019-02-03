@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Access Token Toolkit | Utilities for Facebook by Hoang Vo</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <link rel="icon" href="icon/48.png">
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <!-- CSS Files -->
+        <link href="css/material-dashboard.min.css?v=2.1.0" rel="stylesheet" />
+        <link href="css/common.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="sidebar" class="sidebar" data-color="rose" data-background-color="black">
+
+        </div>
+        <div class="main-panel">
+            <nav id="navbar" class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">Access Token Tools</h4>
+                                    <p class="card-text">This page contains information on Access Token and its tools. Access tokens are keys that can be used to control your Facebook account. Therefore, do not expose your token to others. This should only be used by advanced user only, so use at your own risk. <a target="_blank" href="https://developers.facebook.com/docs/facebook-login/access-tokens/">Learn more</a></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">Never-die Access token</h4>
+                                    <p class="card-text">Regular access tokens become invalid after a while. This special token do not.</p>
+                                    <div>
+                                        <code id="at">Click the button below to show the token</code>
+                                    </div>
+                                    <p>Warning: This is an full-permission token, so it has <span class="text-danger">FULL CONTROL</span> of your account!!</p>
+                                    <button id="getat" class="btn btn-rose">Get access token</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Tools -
+                                        <small class="description">Access token</small>
+                                    </h4>
+                                </div>
+                                <div class="card-body ">
+                                    <div class="info-horizontal">
+                                        <div class="icon icon-rose">
+                                            <i class="material-icons">exit_to_app</i>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="info-title">ADVANCED: Access token invalidator</h4>
+                                            <p>This will deactivate an access token. If you think someone has your access token, you can deactivate it by using this tool.</p>
+                                            <a href="#" id="atdeactivate">Invalidate an access token</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-horizontal">
+                                        <div class="icon icon-rose">
+                                            <i class="material-icons">exit_to_app</i>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="info-title">Log out everywhere</h4>
+                                            <p>You can log out all sessions. This should also invalidate all access tokens.</p>
+                                            <a href="#" id="logoutall">Log out now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browser polyfill-->
+        <script src="js/browser-polyfill.min.js" type="application/javascript"></script>
+        <!--   Core JS Files   -->
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/sweetalert2.js"></script>
+        <script src="js/popper.min.js" type="text/javascript"></script>
+        <script src="js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-material-design.min.js" type="text/javascript"></script>
+        <!--  Notifications Plugin    -->
+        <script src="js/bootstrap-notify.js"></script>
+        <script src="js/_common.js"></script>
+        <script src="js/_attoolkit.js"></script>
+    </body>
+</html>

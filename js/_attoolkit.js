@@ -1,10 +1,23 @@
-$("#sidebar-securitychecker").addClass("active");
+$("#sidebar-attoolkit").addClass("active");
 $("#sidebar-tools").addClass("show");
-$("#pagename").text("Security checker");
+$("#pagename").text("Access Token Toolkit");
 function init() {
 }
-$('#btn_scan').click(function(){
-    swal('Not available!','This feature is not yet available. You can try my security checkup tool','info')
+$("#getat").click(function(){
+    loadingsth(1);
+    browser.runtime.sendMessage({
+        do: "showat"
+    }).then(async r => {
+        if (!r.error) {
+            $("#at").text(r.response.at)
+            $("#getat").attr("disabled", "true")
+            loadingsth(0);
+            init();
+        } else {
+            swal("An error has occurred", `Error: ${r.errorText}`, "error");
+            loadingsth(0);
+        }
+    })
 })
 $("#logoutall").click(function(){
     swal({

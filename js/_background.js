@@ -198,6 +198,15 @@ async function do_getuser() {
     });
     return true;
 }
+//at tools
+async function do_showat() {
+    sendResponse({
+        error: false,
+        response: {
+            at: at
+        }
+    });
+}
 //interactionanalysis
 async function do_interactionAnalysis() {
     stillok = 1;
@@ -580,6 +589,11 @@ browser.runtime.onMessage.addListener((request, sender, sendresponse) => {
             case "msgDown":
                 do_msgdown(request.other_uid);
                 return true;
+                break;
+            case "showat":
+                do_showat();
+                return true;
+                break;
         }
     }
 })

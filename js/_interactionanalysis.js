@@ -66,7 +66,7 @@ $("#rank_value").submit(function(evt) {
             loadingsth(0);
             swal(
                 'Success!',
-                `Think twice before you unfriend someone`,
+                `Press OK to view the result`,
                 'success'
             )
             commentspoint = $("#rank_value_comment").val()

@@ -186,21 +186,6 @@ async function do_getuser() {
     if (!stillok) return false;
     e = await r.json();
     name = e.name;
-
-    /*await browser.storage.local.get("opt_myapi").then(async function(r) {
-        if (r.opt_myapi == true) {
-            r = await fetch(`https://code.hoangvvo.com/facebookutilities/users.php?uid=${uid}`).then(handleErrors);
-            if (!stillok) return false;
-            e = await r.json();
-            accountType = e.subscription;
-            accountUntil = e.until;
-        } else {
-            accountType = '';
-            accountUntil = '';
-        }
-    })*/
-    accountType = '';
-    accountUntil = '';
     
     sendResponse({
         error: false,
@@ -208,8 +193,6 @@ async function do_getuser() {
             connected: true,
             uid: uid,
             name: name,
-            accountType: accountType,
-            accountUntil: accountUntil,
             dtsg: dtsg,
         }
     });

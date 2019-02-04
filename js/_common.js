@@ -1,7 +1,5 @@
 //global var
 _uid = ""; //uid
-_accountType = 0; //vip
-_accountUntil = '';
 _name = ""; //name
 _dtsg = ""; //dtsg
 //notification
@@ -77,28 +75,10 @@ browser.runtime.sendMessage({
             _dtsg = r.response.dtsg;
             _uid = r.response.uid;
             _name = r.response.name;
-            _accountType = r.response.accountType;
-            _accountUntil = r.response.accountUntil;
             $(document).ready(function() {
                 $('#username').text(_name);
                 $("#userid").text(_uid);
                 $("#userpp").attr("src", `https://graph.facebook.com/${_uid}/picture`);
-                switch (_accountType) {
-                    case '': 
-                        $("#accounttype").text("FREE");
-                        break;
-                    case 'FREE':
-                        $("#accounttype").text("FREE");
-                        break;
-                    case 'VIP':
-                        $("#accounttype").text("VIP");
-                        $("#accounttype").addClass("vip");
-                        break;
-                    case 'J2':
-                        $("#accounttype").text("J2");
-                        $("#accounttype").addClass("j2");
-                        break;
-                }
                 init();
                 loadingsth(0);
             })
@@ -112,12 +92,3 @@ browser.runtime.sendMessage({
         swal("An error has occurred", `Error: ${r.errorText}`, "error");
     }
 })
-//get notification 
-/*
-fetch(`https://code.hoangvvo.com/facebookutilities/notification.php`).then(r => {
-    return r.json()
-}).then(r => {
-    for (i in r) {
-        addNotification(r[i].message, r[i].time);
-    }
-})*/
